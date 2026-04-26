@@ -19,8 +19,8 @@ USD_BRL = 5.70
 
 @st.cache_data
 def carregar_dados():
-    df = pd.read_csv("survey_results_public.csv", low_memory=False)
-    return df[df["Country"] == "Brazil"]
+    df = pd.read_csv("brasil_devs.csv", low_memory=False)
+    return df
 
 def plotly_bar(df, x, y, color_scale, height=350):
     fig = px.bar(df, x=x, y=y, orientation="h", color=x,
@@ -172,7 +172,7 @@ with col2:
     st.success("A diferença entre júnior e sênior pode chegar a **3x no salário**. Os primeiros 5 anos são os de maior crescimento proporcional.")
 
 with col3:
-    st.warning(f"A **mediana (R$ {mediana_brl:,}/ano)** é mais honesta que a média **(R$ {media_brl:,}/ano)** — poucos devs com salários altos distorcem a média.")
+    st.warning(f"A **mediana (R$ {mediana_brl:,}/ano)**é mais honesta que a média**(R$ {media_brl:,}/ano)** — poucos devs com salários altos distorcem a média.")
 
 st.divider()
 st.caption("Desenvolvido por Leonardo Duarte · github.com/leodevub · Dados: Stack Overflow Survey 2024")
